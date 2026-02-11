@@ -140,6 +140,10 @@ function startGame() {
         alert('Both player names are required!');
         return;
     }
+    if (p1Name === p2Name) {
+        alert('Player names must be different!');
+        return;
+    }
     
     gameState.player1.name = p1Name;
     gameState.player2.name = p2Name;
