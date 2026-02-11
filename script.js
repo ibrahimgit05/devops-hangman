@@ -100,6 +100,11 @@ function addWord() {
         return;
     }
 
+    if (!/^[A-Z]+$/.test(word)) {
+        alert('Words can only contain letters A-Z!');
+        return;
+    }
+
     wordBank.push(word);
     input.value = '';
     saveWordBank();
