@@ -95,6 +95,11 @@ function addWord() {
     const input = document.getElementById('newWord');
     const word = input.value.trim().toUpperCase();
 
+    if (!word) {
+        alert('Please enter a word!');
+        return;
+    }
+
     wordBank.push(word);
     input.value = '';
     saveWordBank();
