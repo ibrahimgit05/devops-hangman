@@ -25,8 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function toggleTheme() {
+    const body = document.body;
     const themeIcon = document.querySelector('.theme-icon');
     
+    // Toggle dark-mode class on body
+    body.classList.toggle('dark-mode');
+    
+    // Update icon
     if (themeIcon.textContent === '🌙') {
         themeIcon.textContent = '☀️';
     } else {
