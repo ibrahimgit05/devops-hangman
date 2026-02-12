@@ -33,11 +33,15 @@ function toggleTheme() {
     
     // Update icon
     if (themeIcon.textContent === '🌙') {
+    body.classList.toggle('dark-mode');
+    
+    if (body.classList.contains('dark-mode')) {
         themeIcon.textContent = '☀️';
     } else {
         themeIcon.textContent = '🌙';
     }
 }
+
 
 function switchTab(tabName) {
     const tabs = document.querySelectorAll('.tab-content');
