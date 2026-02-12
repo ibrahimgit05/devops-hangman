@@ -28,6 +28,11 @@ function toggleTheme() {
     const body = document.body;
     const themeIcon = document.querySelector('.theme-icon');
     
+    // Toggle dark-mode class on body
+    body.classList.toggle('dark-mode');
+    
+    // Update icon
+    if (themeIcon.textContent === '🌙') {
     body.classList.toggle('dark-mode');
     
     if (body.classList.contains('dark-mode')) {
@@ -118,11 +123,12 @@ function addWord() {
 function editWord(index) {
     const newWord = prompt('Edit word:', wordBank[index]);
     if (newWord) {
-        wordBank.splice(index, 1);
-        saveWordBank();
-        displayWordBank();
+        wordBank[index] = newWord.toUpperCase(); // replace old word with new
+        saveWordBank(); // save updated word bank to localStorage
+        displayWordBank(); // refresh UI
     }
 }
+
 
 function deleteWord(index) {
     if (confirm('Are you sure you want to delete this word?')) {
